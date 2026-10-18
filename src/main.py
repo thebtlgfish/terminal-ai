@@ -1,9 +1,14 @@
 import os
 from dotenv import load_dotenv
 from ollama import Client
+from balance import usage
+import time
 
 load_dotenv()
 api_key = os.getenv('API_KEY')
+account_usage = usage(api_key)
+print(account_usage)
+time.sleep(2)
 
 models = [
     "beam",
